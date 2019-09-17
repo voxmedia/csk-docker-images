@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/docker/login@master
         env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_USERNAME: cschiewek
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build
         env:
