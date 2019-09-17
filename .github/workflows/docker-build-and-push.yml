@@ -16,7 +16,7 @@ jobs:
       - name: Build and Push
         env:
           IMAGE: middleman
-        run: make build
+        run: make release
       - name: Notify
         uses: Ilshidur/action-slack@master
         env:
