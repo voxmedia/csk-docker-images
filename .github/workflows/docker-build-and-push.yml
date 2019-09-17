@@ -1,0 +1,13 @@
+name: Docker Build and Push
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    name: middleman
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and Push
+        run: IMAGE=middleman make build
