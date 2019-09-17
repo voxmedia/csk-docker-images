@@ -5,9 +5,11 @@ on:
     branches: [master]
 
 jobs:
-  build:
-    name: middleman
+  middleman:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - name: Build and Push
-        run: IMAGE=middleman make build
+        env:
+          IMAGE: middleman
+        run: make build
