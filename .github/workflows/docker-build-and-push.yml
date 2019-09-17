@@ -10,7 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout
       - uses: actions/docker/login
-        secrets: [DOCKER_USERNAME, DOCKER_PASSWORD]
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and Push
         env:
           IMAGE: middleman
