@@ -5,6 +5,7 @@ on:
     branches: [master]
 
 jobs:
+  setup:
   middleman:
     runs-on: ubuntu-latest
     steps:
@@ -13,10 +14,14 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build and Push
+      - name: Build
         env:
           IMAGE: middleman
-        run: make release
+        run: make build
+      - name: Push
+        env:
+          IMAGE: middleman
+        run: make push
       - name: Notify
         uses: Ilshidur/action-slack@master
         env:
