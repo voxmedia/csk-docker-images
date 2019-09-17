@@ -1,6 +1,6 @@
-PREFIX ?= docker.pkg.github.com/voxmedia/csk-docker-images
+PREFIX ?= voxmedia/csk-
 VERSION ?= `cat $(IMAGE)/VERSION`
-IMAGE_NAME ?= $(PREFIX)/$(IMAGE)
+IMAGE_NAME ?= $(PREFIX)$(IMAGE)
 
 build:
 	docker build -t $(IMAGE_NAME):$(VERSION) -t $(IMAGE_NAME):latest $(IMAGE)
