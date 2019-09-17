@@ -5,7 +5,6 @@ on:
     branches: [master]
 
 jobs:
-  setup:
   middleman:
     runs-on: ubuntu-latest
     steps:
