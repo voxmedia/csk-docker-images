@@ -23,5 +23,6 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_USERNAME: Github Actions
           SLACK_CHANNEL: app-log-csk
+          SLACK_OVERRIDE_MESSAGE: true
         with:
           args: 'A new version of the csk-middleman docker image has been built and pushed.'
