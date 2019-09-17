@@ -8,7 +8,9 @@ jobs:
   middleman:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout
+      - uses: actions/docker/login
+        secrets: [DOCKER_USERNAME, DOCKER_PASSWORD]
       - name: Build and Push
         env:
           IMAGE: middleman
