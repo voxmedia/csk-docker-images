@@ -14,4 +14,4 @@ jobs:
           DOCKER_USERNAME: cschiewek
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - name: Info
-        run: docker info
+        run: cat $HOME/.docker/config.json
