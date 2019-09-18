@@ -13,7 +13,5 @@ jobs:
         env:
           DOCKER_USERNAME: cschiewek
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Login
-        run: docker login
       - name: Info
         run: docker info
