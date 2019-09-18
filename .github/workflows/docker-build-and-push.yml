@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/docker/login@master
+      - name: Login
         env:
-          DOCKER_USERNAME: cschiewek
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Info
+        run: echo -n $DOCKER_PASSWORD | docker login --username cschiewek --password-stdin
+      - name: Check
         run: cat $HOME/.docker/config.json
