@@ -2,7 +2,7 @@ name: Docker Build and Push
 
 on:
   push:
-    branches: [master]
+    branches: [actions]
 
 jobs:
   middleman:
@@ -13,20 +13,7 @@ jobs:
         env:
           DOCKER_USERNAME: cschiewek
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build
-        env:
-          IMAGE: middleman
-        run: make build
-      - name: Push
-        env:
-          IMAGE: middleman
-        run: make push
-      - name: Notify
-        uses: Ilshidur/action-slack@master
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_USERNAME: Github Actions
-          SLACK_CHANNEL: app-log-csk
-          SLACK_OVERRIDE_MESSAGE: true
-        with:
-          args: 'A new version of the csk-middleman docker image has been built and pushed.'
+      - name: Login
+        run: docker login
+      - name: Info
+        run: docker info
