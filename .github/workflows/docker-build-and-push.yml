@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - uses: actions/docker/login@master
+      - name: Login
         env:
-          DOCKER_USERNAME: cschiewek
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: echo -n $DOCKER_PASSWORD | docker login --username cschiewek --password-stdin
       - name: Build
         env:
           IMAGE: middleman
