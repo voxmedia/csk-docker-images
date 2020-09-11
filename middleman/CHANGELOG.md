@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.2.0]
 ### Changed
-- Pin middleman version to 4.3.8
+- Pin middleman version to 4.3.10
 
 ## [0.1.0]
 ### Added
